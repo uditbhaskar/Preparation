@@ -22,6 +22,8 @@ sealed class Vehicle(val isTwoWheeler: Boolean, val mileage: Int) {
     }
 }
 
+typealias bike = Vehicle.Motorcycle
+
 fun Int.kg(): Kilogram = Kilogram(this)
 @JvmInline
 value class Kilogram(private val kg: Int)
@@ -40,6 +42,14 @@ fun main() {
 
     val hybrid = motorcycle combineWith suv
     println("\nCombined Vehicle (Motorcycle + SUV):\n$hybrid")
+
+    when(hybrid){
+        is Vehicle.Tricycle -> {}
+        is bike -> {} // here used typealias
+        is Vehicle.SportsUtilityVehicle -> {}
+        else -> {}
+        // here using else because the CustomVehicle is private and when statement needs to be exhausted
+    }
 
     val superHybrid = hybrid combineWith tricycle
     println("\nCombined Vehicle (Hybrid + Tricycle):\n$superHybrid")
