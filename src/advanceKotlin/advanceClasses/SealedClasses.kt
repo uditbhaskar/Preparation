@@ -43,4 +43,8 @@ fun main() {
 
     val superHybrid = hybrid combineWith tricycle
     println("\nCombined Vehicle (Hybrid + Tricycle):\n$superHybrid")
+
+    val ultraHybrid = suv combineWith tricycle
+    println("\nCombined Vehicle (SUV + Tricycle):\n$ultraHybrid")
+
 }
