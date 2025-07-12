@@ -33,7 +33,7 @@ fun main() {
     obj()
     obj + obj
     obj * obj
-    -obj
+    println(-obj)
     +obj
     obj * obj
 }
