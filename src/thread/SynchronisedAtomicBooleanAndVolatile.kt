@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicBoolean
  * ✅ What is AtomicBoolean?
  * AtomicBoolean is a class in java.util.concurrent.atomic that provides a thread-safe, lock-free way to read, write,
  * and update a boolean value atomically.
- * ⚙️ How It Works Internally?
+ * ⚙️ How It Works Internally
  * AtomicBoolean uses low-level atomic CPU instructions (like CAS: Compare-And-Swap) via the Unsafe class in Java.
  *
  * 🔄 compareAndSet(expected, newValue) is the core method:
@@ -30,8 +30,7 @@ fun initializeOnce() {
  * 🔍 What is volatile?
  * Volatile is a keyword that ensures visibility of changes to a variable across threads.
  *
- * When a variable is declared volatile, any read or write to it goes directly to main memory.
- * This prevents threads from caching its value in their local memory (CPU registers or thread-local cache).
+ * When a variable is declared volatile, any read or write to it goes directly to main memory. This prevents threads from caching its value in their local memory (CPU registers or thread-local cache).
  */
 
 /**

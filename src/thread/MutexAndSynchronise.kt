@@ -22,6 +22,7 @@ package thread
  *
  * You want to replace synchronized blocks in a suspend-safe way.
  */
+fun main(){}
 
 /**
 fun main() {

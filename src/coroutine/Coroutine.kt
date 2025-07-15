@@ -85,26 +85,26 @@ suspend fun processResult(await: Int, await1: Int, nestRes: Int) {
 
 
 /**
+ * ## 🔁 Scenario: Multiple child coroutines without try-catch
  *
- * 🔁 Scenario:
- * You launch multiple child coroutines (e.g., in SupervisorJob or viewModelScope) and don’t use try-catch inside each launch block.
+ * You launch multiple child coroutines (e.g., in `SupervisorJob` or `viewModelScope`)
+ * and don’t use `try-catch` inside each `launch` block.
  *
- * 🔥 What happens?
- * Each child coroutine runs independently (thanks to SupervisorJob).
+ * ---
  *
- * If a child throws an exception and it’s not caught inside the coroutine, then:
+ * ### 🔥 What happens?
+ * - Each child coroutine runs independently (due to `SupervisorJob`).
+ * - If a child throws an exception and it’s not caught:
+ *   - For `launch`: the exception goes to the `CoroutineExceptionHandler`, if defined.
+ *   - For `async`: the exception is deferred and only thrown when `.await()` is called.
+ * - Only the **first uncaught exception** from `launch` is delivered to the handler.
+ * - Other failures are **logged** but **not re-thrown or re-handled**.
+ * - They are often **silently ignored** unless explicitly handled.
  *
- * For launch: it goes to the CoroutineExceptionHandler, if present.
+ * ---
  *
- * For async: the exception is stored and only thrown when .await() is called.
- *
- * Only the first uncaught exception in launch is delivered to the handler.
- *
- * Other failures are logged, but not re-thrown or re-handled.
- *
- * They're often silently ignored unless explicitly handled.
- *
- *
+ * ### 🧪 Example:
+ * ```kotlin
  * val handler = CoroutineExceptionHandler { _, exception ->
  *     println("🔥 Global Handler: ${exception.message}")
  * }
@@ -127,58 +127,59 @@ suspend fun processResult(await: Int, await1: Int, nestRes: Int) {
  *         throw IllegalStateException("Job 3 failed")
  *     }
  * }
+ * ```
+ * ---
  *
+ * ## 🚀 Summary: `Dispatchers.IO` vs `Dispatchers.Default`
+ *
+ * | Feature           | `Dispatchers.IO`                    | `Dispatchers.Default`                  |
+ * |-------------------|-------------------------------------|----------------------------------------|
+ * | **Purpose**        | I/O-bound tasks (blocking ops)      | CPU-bound tasks (intensive computation)|
+ * | **Thread pool size** | Up to 64 threads (expandable)     | Limited (based on CPU cores)           |
+ * | **Backed by**      | Relaxed shared thread pool          | ForkJoinPool or core-based pool        |
+ * | **Best for**       | File I/O, DB, API calls             | Sorting, parsing, image processing     |
+ * | **Blocking allowed?** | ✅ Yes — designed for blocking ops | ❌ No — use for pure CPU work only     |
+ *
+ * ---
+ *
+ * ### 🧠 Internals:
+ *
+ * #### 🔧 `Dispatchers.Default`:
+ * - Uses limited thread pool (based on `availableProcessors()`).
+ * - Ideal for CPU-bound work (minimize context switching).
+ * - Uses work-stealing via ForkJoinPool-like mechanism.
+ * - Can become saturated if overloaded, causing slowdown.
+ *
+ * #### 🔧 `Dispatchers.IO`:
+ * - Also runs on background threads.
+ * - Allows blocking (e.g., `Thread.sleep`, DB, network).
+ * - Can grow up to 64 threads to avoid starvation.
+ *
+ * ---
+ *
+ * ### ⚠️ Why not use IO for everything?
+ * - IO is lenient but inefficient for CPU-heavy tasks.
+ * - Default is optimized for thread affinity, CPU cache, minimal overhead.
+ * - Blocking in Default can freeze app performance.
+ *
+ * ---
+ *
+ * ### 🔍 Analogy:
+ * - `Dispatchers.Default` = engineers doing deep thinking → avoid interruptions.
+ * - `Dispatchers.IO` = clerks doing I/O work → scalable and safe to block.
+ *
+ * ---
+ *
+ * ### ✅ Rule of Thumb:
+ *
+ * | Task                                | Use                |
+ * |-------------------------------------|---------------------|
+ * | Reading from disk or DB             | `Dispatchers.IO`    |
+ * | Making API/network call             | `Dispatchers.IO`    |
+ * | Sorting, JSON parsing, heavy logic  | `Dispatchers.Default` |
+ * | Image filtering, matrix operations  | `Dispatchers.Default` |
+ * | Writing to files or SharedPrefs     | `Dispatchers.IO`    |
  */
+fun main(){
 
-
-/**
- *
- * 🚀 Summary: Dispatchers.IO vs Dispatchers.Default
- * Feature	Dispatchers.IO	Dispatchers.Default
- * Purpose	I/O-bound tasks (blocking ops)	CPU-bound tasks (intensive computation)
- * Thread pool size	Up to 64 threads (unbounded-like)	Limited: number of CPU cores
- * Backed by	Shared thread pool with relaxed limits	Shared ForkJoinPool or CPU core threads
- * Best for	File I/O, network, DB (blocking work)	Sorting, JSON parsing, image processing
- * Allows blocking?	✅ Yes — designed for blocking ops	❌ Avoid blocking — meant for pure CPU tasks
- *
- * 🧠 Internals:
- * 🔧 Dispatchers.Default:
- * Uses a limited thread pool (based on CPU cores, typically availableProcessors()).
- *
- * Ideal for CPU-bound operations where context switching should be minimal.
- *
- * Uses work-stealing algorithms via a ForkJoinPool-like system.
- *
- * If you run too many tasks here, it may get saturated, leading to performance degradation.
- *
- * 🔧 Dispatchers.IO:
- * Also runs on background threads, but...
- *
- * Uses a larger thread pool (up to 64 threads by default).
- *
- * Designed to handle blocking operations safely (e.g., Thread.sleep(), network, DB).
- *
- * If you block threads here, it just adds more threads, preventing starvation.
- *
- * ⚠️ Why not use IO for everything?
- * Dispatchers.IO has more lenient limits, but using it for compute-heavy tasks wastes resources.
- *
- * Default is more optimized for CPU cache, thread affinity, and minimizes overhead for CPU-bound coroutines.
- *
- * Blocking in Default can freeze the pool and make your app sluggish.
- *
- * 🔍 Real-world analogy:
- * Imagine:
- *
- * Dispatchers.Default = engineers doing heavy brain work → don't interrupt them, let them think.
- *
- * Dispatchers.IO = clerks doing file/network/database work → more of them can be spun up, but don’t ask them to do math.
- *
- * ✅ Rule of Thumb:
- * If you're doing...	Use...
- * Reading from disk or database	Dispatchers.IO
- * Making an API call	Dispatchers.IO
- * Parsing JSON, sorting large list	Dispatchers.Default
- * Image filtering or complex calculations	Dispatchers.Default
- * Writing to files or preferences	Dispatchers.IO
- */
+}
