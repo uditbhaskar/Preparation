@@ -134,3 +134,32 @@ suspend fun testFlow(){
  *     }
  * }
  */
+
+
+
+
+/*
+@OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
+suspend fun search(searchString: StateFlow<String>): Flow<String> =
+    searchString.debounce(300)
+        .distinctUntilChanged()
+        .filter {!it.isBlank() }
+        .flatMapLatest { searchQuery->
+            try {
+                flow {
+                    emit(fetchSearchFromServer(searchQuery))
+                }
+            }catch (ex: Exception){
+                flow {
+                    emit("")
+                }
+            }
+
+        }
+        .catch { emit("")
+        }
+
+suspend fun fetchSearchFromServer(str: String): String{
+    delay(3000)
+    return "data"
+}*/
