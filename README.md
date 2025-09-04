@@ -1,8 +1,8 @@
-# 🚀 Senior Android Developer Interview Preparation
+# Senior Android Developer Interview Preparation
 
 A comprehensive, curated collection of Kotlin concepts and advanced topics essential for Senior Android Developer interviews. This repository covers everything from basic Kotlin syntax to advanced Android-specific patterns, SOLID principles, and concurrency concepts.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Topics Covered](#topics-covered)
@@ -12,7 +12,7 @@ A comprehensive, curated collection of Kotlin concepts and advanced topics essen
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🎯 Overview
+## Overview
 
 This repository is designed to help developers prepare for Senior Android Developer interviews by providing:
 
@@ -22,15 +22,15 @@ This repository is designed to help developers prepare for Senior Android Develo
 - **Production-Quality Code**: Clean, well-structured code following best practices
 - **Progressive Learning**: Topics organized from basic to advanced
 
-## 📚 Topics Covered
+## Topics Covered
 
-### 🔧 Advanced Kotlin Classes
+### Advanced Kotlin Classes
 - **Constructors**: Primary, secondary constructors, and constructor chaining
 - **Object Expressions & Declarations**: Singleton patterns and anonymous objects
 - **Sealed Classes**: Type-safe hierarchies and pattern matching
 - **Backing Fields**: Custom getters/setters and property behavior
 
-### ⚡ Advanced Functions
+### Advanced Functions
 - **Lambda Functions**: Higher-order functions and functional programming
 - **Anonymous Functions**: Function expressions and type declarations
 - **Inline Functions**: Performance optimization and non-local returns
@@ -38,28 +38,28 @@ This repository is designed to help developers prepare for Senior Android Develo
 - **Operator Overloading**: Customizing operator behavior
 - **Tail Recursion**: Stack-safe recursive functions
 
-### 🧵 Concurrency & Threading
+### Concurrency & Threading
 - **Kotlin Coroutines**: Async programming and structured concurrency
 - **Flow**: Reactive streams and state management
 - **Thread Basics**: Thread creation and management
 - **Synchronization**: Mutex, volatile, and atomic operations
 - **Handler & Looper**: Android thread communication patterns
 
-### 🏗️ SOLID Principles
+### SOLID Principles
 - **Single Responsibility Principle**: Class design and separation of concerns
 - **Open-Closed Principle**: Extension without modification
 - **Liskov Substitution Principle**: Proper inheritance hierarchies
 - **Interface Segregation Principle**: Client-specific interfaces
 - **Dependency Inversion Principle**: Abstraction over concretion
 
-### 🔍 Advanced Topics
+### Advanced Topics
 - **Value Classes**: Type-safe wrappers with zero overhead
 - **Extension Functions**: Adding functionality to existing classes
 - **Reflection**: Runtime type inspection with KClass
 - **Clean Code**: Best practices and code organization
 - **Build Systems**: Dependency management and project structure
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -77,7 +77,7 @@ src/
 └── kClass/                      # Reflection and KClass
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ src/
    - Navigate to any `.kt` file
    - Run the `main()` function to see the examples in action
 
-## 💡 How to Use
+## How to Use
 
 ### For Interview Preparation
 
@@ -127,7 +127,7 @@ src/
 - `flow/Flow.kt` - Reactive programming with Flow
 - `thread/MutexAndSynchronise.kt` - Thread safety concepts
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -139,26 +139,26 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Created by **Udit** for the Android developer community
 - Inspired by real interview experiences and industry best practices
 - Contributions from the open-source community
 
-## 📞 Support
+## Support
 
 If you find this repository helpful, please:
-- ⭐ Star the repository
-- 🐛 Report issues
-- 💡 Suggest improvements
-- 🔄 Share with other developers
+-  Star the repository
+-  Report issues
+-  Suggest improvements
+-  Share with other developers
 
 ---
 
-**Happy Coding! 🎉**
+**Happy Coding!**
 
 *This repository is continuously updated with new concepts and improvements. Stay tuned for more content!*
