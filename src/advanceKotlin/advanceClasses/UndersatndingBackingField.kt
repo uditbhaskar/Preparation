@@ -2,6 +2,22 @@ package advanceKotlin.advanceClasses
 
 import java.util.Stack
 
+/**
+ * # Understanding Backing Fields in Kotlin
+ * 
+ * This file demonstrates backing fields and custom getters/setters in Kotlin.
+ * Shows how properties work internally and how to customize their behavior.
+ * 
+ * ## Topics Covered:
+ * - **Backing Field**: The `field` identifier in custom getters/setters
+ * - **Custom Getters**: Custom logic when accessing properties
+ * - **Custom Setters**: Custom logic when setting properties
+ * - **Property Validation**: Using setters to validate input
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
 data class Student(
     val id: Int,
     var age: Int,

@@ -1,6 +1,23 @@
 package buildSystem
 
 /**
+ * # Build System Concepts
+ * 
+ * This file demonstrates build system concepts and dependency management.
+ * Shows how modern build systems work in software development.
+ * 
+ * ## Topics Covered:
+ * - **Build Systems**: Tools for compiling, packaging, and deploying software
+ * - **Dependency Management**: Handling external libraries and modules
+ * - **Build Configuration**: Setting up build processes
+ * - **Module Systems**: Organizing code into reusable modules
+ * - **Package Management**: Managing third-party dependencies
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
+/**
  * ## 🔧 Android Build System Overview
  *
  * The Android build system is based on **Gradle** and the **Android Gradle Plugin (AGP)**.

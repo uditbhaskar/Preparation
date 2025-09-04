@@ -163,3 +163,14 @@ suspend fun fetchSearchFromServer(str: String): String{
     delay(3000)
     return "data"
 }*/
+
+fun main() {
+    println("Flow examples are commented out - they require kotlinx.coroutines dependency")
+    println("Key concepts demonstrated:")
+    println("- Cold Flow: flow { emit() } - starts when collected")
+    println("- Hot Flow: SharedFlow/StateFlow - emit regardless of collectors")
+    println("- Flow operators: map, filter, buffer, debounce")
+    println("- Exception handling: retry, catch, onCompletion")
+    println("- StateFlow: Holds current state, replays last value")
+    println("- SharedFlow: Broadcasts events to multiple collectors")
+}

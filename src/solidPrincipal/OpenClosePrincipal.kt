@@ -1,9 +1,20 @@
 package solidPrincipal
 
 /**
- * Suppose your NotificationSender class has a when(type) block to handle
- * different kinds of notifications (EMAIL, SMS, PUSH).
- *
+ * # Open-Closed Principle (OCP)
+ * 
+ * This file demonstrates the Open-Closed Principle from SOLID principles.
+ * Shows how classes should be open for extension but closed for modification.
+ * 
+ * ## Topics Covered:
+ * - **Open-Closed Principle**: Software entities should be open for extension, closed for modification
+ * - **Polymorphism**: Using interfaces to achieve extensibility
+ * - **Strategy Pattern**: Encapsulating algorithms in separate classes
+ * - **Code Extensibility**: Adding new features without modifying existing code
+ * - **Interface Segregation**: Small, focused interfaces
+ * 
+ * @author Udit
+ * @since 1.0
  */
 
 
@@ -52,14 +63,14 @@ fun main(){
     val sendForEmail = EmailNotification()
     val sendForPush = PushNotification()
     val arunNotification = ArunNotification()
-    val obj  = NotificationSender()
+    val obj = NotificationSender()
     obj.sendNotifications(arunNotification)
     obj.sendNotifications(sendForPush)
 
     val paymentFromStrip = Strip()
     val paymentFromGooglePay = GooglePay()
     val paymentFromPayPal = PayPal()
-    val objPayment  = PaymentProcessor()
+    val objPayment = PaymentProcessor()
     objPayment.processPayment(paymentFromPayPal)
     objPayment.processPayment(paymentFromStrip)
     objPayment.processPayment(paymentFromGooglePay)

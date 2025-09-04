@@ -1,5 +1,22 @@
 package advanceKotlin.advanceFunctions
 
+/**
+ * # Inline Functions in Kotlin
+ * 
+ * This file demonstrates inline functions and their behavior with lambdas.
+ * Shows performance optimizations and restrictions with inline functions.
+ * 
+ * ## Topics Covered:
+ * - **Inline Functions**: Functions that are expanded at call site for performance
+ * - **noinline**: Preventing specific lambda parameters from being inlined
+ * - **crossinline**: Preventing non-local returns in lambda parameters
+ * - **Non-local Returns**: Returning from outer function within lambda
+ * - **Performance**: How inlining affects bytecode and execution
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
 inline fun inlineExample(noinline param: (Int,String) -> Int,  paramA: (Int, String) -> Int) {
     param(23,"done")
     println("Before paramA")

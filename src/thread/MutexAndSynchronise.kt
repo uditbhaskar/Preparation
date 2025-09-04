@@ -1,28 +1,27 @@
 package thread
 
 /**
- * In Kotlin, especially with coroutines, a Mutex is used to ensure mutual exclusion,
- * meaning only one coroutine can access a critical section at a time.
- * It's part of kotlinx.coroutines.sync.Mutex and works similarly to synchronized blocks in Java,
- * but it's non-blocking and coroutine-friendly.
- *
- * 🔐 What is Mutex?
- * Mutex (short for Mutual Exclusion) allows you to protect shared resources from concurrent access.
- * It is used in coroutine contexts where suspending is allowed.
- *
- * It’s like a lock — only one coroutine can "hold" the mutex at a time.
- *
- * If another coroutine tries to acquire it, it suspends until it's free.
- *
- * ✅ When to Use Mutex:
- *
- * You’re sharing mutable state between coroutines.
- *
- * You want to avoid race conditions.
- *
- * You want to replace synchronized blocks in a suspend-safe way.
+ * # Mutex and Synchronization in Kotlin Coroutines
+ * 
+ * This file demonstrates mutex usage for thread-safe operations in coroutines.
+ * Shows how to prevent race conditions in concurrent code.
+ * 
+ * ## Topics Covered:
+ * - **Mutex**: Mutual exclusion primitive for coroutines
+ * - **Race Conditions**: Problems with concurrent access to shared state
+ * - **Thread Safety**: Protecting shared resources from concurrent modification
+ * - **Coroutine Synchronization**: Non-blocking synchronization primitives
+ * - **Critical Sections**: Code that must be executed by only one thread at a time
+ * 
+ * Note: This file contains commented Android/Coroutine specific code that would need
+ * kotlinx.coroutines dependency to run.
+ * 
+ * @author Udit
+ * @since 1.0
  */
-fun main(){}
+fun main() {
+    println("Mutex examples are commented out - they require kotlinx.coroutines dependency")
+}
 
 /**
 fun main() {

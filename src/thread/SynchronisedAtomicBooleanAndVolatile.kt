@@ -3,16 +3,20 @@ package thread
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
- * ✅ What is AtomicBoolean?
- * AtomicBoolean is a class in java.util.concurrent.atomic that provides a thread-safe, lock-free way to read, write,
- * and update a boolean value atomically.
- * ⚙️ How It Works Internally
- * AtomicBoolean uses low-level atomic CPU instructions (like CAS: Compare-And-Swap) via the Unsafe class in Java.
- *
- * 🔄 compareAndSet(expected, newValue) is the core method:
- * It checks if the current value is expected, and if yes, it sets it to newValue — all in a single atomic step.
- *
- * This prevents race conditions, even with many threads.
+ * # Synchronized, AtomicBoolean, and Volatile in Kotlin
+ * 
+ * This file demonstrates thread-safe programming concepts in Kotlin.
+ * Shows different approaches to handling concurrent access to shared data.
+ * 
+ * ## Topics Covered:
+ * - **AtomicBoolean**: Thread-safe boolean operations using atomic instructions
+ * - **Volatile**: Ensuring visibility of changes across threads
+ * - **Compare-And-Swap (CAS)**: Lock-free atomic operations
+ * - **Thread Safety**: Preventing race conditions in concurrent code
+ * - **Memory Visibility**: How changes are propagated between threads
+ * 
+ * @author Udit
+ * @since 1.0
  */
 
 val initialized = AtomicBoolean(false)
@@ -101,6 +105,16 @@ fun initializeOnce() {
 var running = true
 
 fun main() {
+    // Test AtomicBoolean
+    println("Testing AtomicBoolean:")
+    repeat(3) {
+        Thread { initializeOnce() }.start()
+    }
+    
+    Thread.sleep(100) // Wait for threads to complete
+    
+    // Test volatile
+    println("\nTesting volatile:")
     val worker = Thread {
         while (running) {
             println("Worker: checking for new data...")

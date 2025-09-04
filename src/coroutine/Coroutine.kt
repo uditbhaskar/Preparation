@@ -1,6 +1,24 @@
 package coroutine
 
-//put it inside a vieModel
+/**
+ * # Kotlin Coroutines - Advanced Concepts
+ * 
+ * This file demonstrates advanced coroutine concepts and patterns.
+ * Contains commented examples showing real-world coroutine usage.
+ * 
+ * ## Topics Covered:
+ * - **Coroutine Scopes**: Managing coroutine lifecycles
+ * - **Dispatchers**: Threading contexts for coroutines (IO, Main, Default)
+ * - **Exception Handling**: Proper error handling in coroutines
+ * - **Structured Concurrency**: Parent-child relationships in coroutines
+ * - **SupervisorJob**: Handling failures in child coroutines
+ * - **async/await**: Concurrent execution and result collection
+ * 
+ * Note: All code is commented as it requires Android/Coroutine dependencies.
+ * 
+ * @author Udit
+ * @since 1.0
+ */
 
 /*suspend fun asyncCode(){
     withContext(Dispatchers.Unconfined + CoroutineName("Async Code")) {
@@ -180,6 +198,6 @@ suspend fun processResult(await: Int, await1: Int, nestRes: Int) {
  * | Image filtering, matrix operations  | `Dispatchers.Default` |
  * | Writing to files or SharedPrefs     | `Dispatchers.IO`    |
  */
-fun main(){
-
+fun main() {
+    println("Coroutine examples are commented out - they require kotlinx.coroutines and Android dependencies")
 }

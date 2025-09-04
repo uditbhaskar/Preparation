@@ -1,6 +1,21 @@
 package valueClass
 
-
+/**
+ * # Value Classes in Kotlin
+ * 
+ * This file demonstrates value classes and inline classes in Kotlin.
+ * Shows how to create type-safe wrappers with zero runtime overhead.
+ * 
+ * ## Topics Covered:
+ * - **Value Classes**: @JvmInline classes that wrap single values
+ * - **Type Safety**: Preventing mixing of semantically different values
+ * - **Extension Properties**: Adding properties to existing types
+ * - **Zero Overhead**: Compile-time optimizations for value classes
+ * - **Domain Modeling**: Using value classes for domain-specific types
+ * 
+ * @author Udit
+ * @since 1.0
+ */
 
 val Int.age
     get() = Age(this)
@@ -41,7 +56,7 @@ data class Student(val age: Age)
 fun main() {
     val res = Age(23)
     println(createStudent(res))
-    println(setWeight(Kilogram(23) ))
+    println(setWeight(Kilogram(23)))
     println(23.gram)
     val d = Distance(100)
     printDistance(d)

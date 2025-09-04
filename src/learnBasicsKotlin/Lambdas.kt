@@ -1,18 +1,20 @@
 package learnBasicsKotlin
 
-import kotlin.reflect.jvm.internal.impl.metadata.jvm.JvmProtoBuf.StringTableTypes.Record.Operation
-
 /**
- * A lambda in Kotlin is an anonymous function that can be treated as a
- * value—passed as an argument, returned from a function, or stored in a variable.
- * Lambdas are commonly used for concise function expressions,
- * especially in higher-order functions like map, filter, or custom callbacks.
- *
- * Key points:
- * Syntax: { parameter(s) -> body }
- * No explicit function name: Lambdas are unnamed and often used inline.
- * Can access variables from the enclosing scope (closures).
- * Commonly used for event listeners, collection operations, and functional programming patterns.
+ * # Lambda Functions - Basic Concepts
+ * 
+ * This file demonstrates basic lambda function concepts in Kotlin.
+ * Shows fundamental lambda syntax and usage patterns.
+ * 
+ * ## Topics Covered:
+ * - **Lambda Syntax**: Basic { parameter -> body } syntax
+ * - **Function Types**: Type declarations for lambda parameters
+ * - **Higher-Order Functions**: Functions that accept lambdas
+ * - **Currying**: Functions returning other functions
+ * - **Closures**: Accessing variables from enclosing scope
+ * 
+ * @author Udit
+ * @since 1.0
  */
 
 var sumTwoNum: (Int) -> (Int) -> Int = { a -> { i -> a + i } }
@@ -25,6 +27,4 @@ fun main() {
 }
 
 
-fun operate(a: Int, b: Int, operation: (x: Int, y: Int) -> Int): Int {
-    return operation(a, b)
-}
+fun operate(a: Int, b: Int, operation: (x: Int, y: Int) -> Int): Int = operation(a, b)

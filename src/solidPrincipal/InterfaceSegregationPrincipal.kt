@@ -1,5 +1,22 @@
 package solidPrincipal
 
+/**
+ * # Interface Segregation Principle (ISP)
+ * 
+ * This file demonstrates the Interface Segregation Principle from SOLID principles.
+ * Shows how clients should not be forced to depend on interfaces they don't use.
+ * 
+ * ## Topics Covered:
+ * - **Interface Segregation**: Many client-specific interfaces are better than one general-purpose interface
+ * - **Fat Interfaces**: Problems with large, monolithic interfaces
+ * - **Client-Specific Interfaces**: Designing interfaces based on client needs
+ * - **Dependency Management**: Reducing unnecessary dependencies
+ * - **Interface Design**: Creating focused, cohesive interfaces
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
 //Break interfaces into smaller parts and only let class implement the necessary interfaces.
 
 /**

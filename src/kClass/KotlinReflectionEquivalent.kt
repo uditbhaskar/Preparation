@@ -1,5 +1,22 @@
 package kClass
 
+/**
+ * # Kotlin Reflection and KClass
+ * 
+ * This file demonstrates Kotlin reflection capabilities and KClass usage.
+ * Shows how to inspect and manipulate code at runtime.
+ * 
+ * ## Topics Covered:
+ * - **KClass**: Kotlin's reflection API for class information
+ * - **Runtime Inspection**: Examining classes, properties, and functions at runtime
+ * - **Reflection API**: Kotlin's reflection capabilities
+ * - **Type Information**: Getting type information dynamically
+ * - **Metadata Access**: Accessing class metadata and annotations
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
 import kotlin.reflect.KClass
 
 fun main() {

@@ -1,6 +1,23 @@
 package buildSystem
 
 /**
+ * # Library Import and Management
+ * 
+ * This file demonstrates library import concepts and dependency management.
+ * Shows how to work with external libraries in Kotlin projects.
+ * 
+ * ## Topics Covered:
+ * - **Library Imports**: Importing external dependencies
+ * - **Package Management**: Managing library versions and conflicts
+ * - **Dependency Resolution**: How build systems resolve dependencies
+ * - **Module Dependencies**: Inter-module dependencies
+ * - **Library Integration**: Integrating third-party libraries
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
+/**
  * ### How Libraries Are Imported via `build.gradle` in Android Projects?
  *
  * 1. **Declaring Dependencies**

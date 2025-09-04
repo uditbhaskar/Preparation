@@ -1,6 +1,23 @@
 package solidPrincipal
 
 /**
+ * # Liskov Substitution Principle (LSP)
+ * 
+ * This file demonstrates the Liskov Substitution Principle from SOLID principles.
+ * Shows how subtypes must be substitutable for their base types.
+ * 
+ * ## Topics Covered:
+ * - **Liskov Substitution**: Objects of superclass should be replaceable with objects of subclass
+ * - **Behavioral Subtyping**: Subclasses should behave like their parent classes
+ * - **Contract Preservation**: Maintaining the contract defined by the base class
+ * - **Inheritance Design**: Proper inheritance hierarchies
+ * - **Polymorphism**: Using inheritance for flexible code design
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
+/**
  *
  *
  */

@@ -1,6 +1,27 @@
 package cleanCode
 
 /**
+ * # Clean Code Principles in Kotlin
+ * 
+ * This file demonstrates clean code principles and best practices.
+ * Shows how to refactor code for better readability, maintainability, and testability.
+ * 
+ * ## Topics Covered:
+ * - **Clean Code**: Writing code that is easy to read, understand, and maintain
+ * - **Single Responsibility**: Each function/class should have one reason to change
+ * - **Meaningful Names**: Using descriptive names for variables, functions, and classes
+ * - **Code Organization**: Structuring code for better maintainability
+ * - **Constants**: Extracting magic strings and numbers
+ * - **Error Handling**: Proper exception handling patterns
+ * 
+ * Note: Android-specific code is commented out as it requires Android SDK.
+ * 
+ * @author Udit
+ * @since 1.0
+ */
+
+/*
+// Before refactoring - Android specific code
 fun saveUserData(context: Context, name: String, age: Int, isPremium: Boolean) {
     val sharedPref = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
     val editor = sharedPref.edit()
@@ -78,3 +99,13 @@ object UserPreference {
 
         }
 */
+
+fun main() {
+    println("Clean Code examples are commented out - they require Android SDK")
+    println("Key principles demonstrated:")
+    println("- Extract constants for magic strings")
+    println("- Use meaningful function and variable names")
+    println("- Apply Single Responsibility Principle")
+    println("- Organize code into logical modules")
+    println("- Use proper error handling")
+}
