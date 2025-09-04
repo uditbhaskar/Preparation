@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to this project! This guide will help you get started with contributing to our comprehensive Android interview preparation resource.
 
-## 🎯 Project Goals
+## Project Goals
 
 This repository aims to:
 - Provide comprehensive, interview-focused Kotlin and Android concepts
@@ -10,7 +10,7 @@ This repository aims to:
 - Help developers prepare for Senior Android Developer roles
 - Create a valuable open-source educational resource
 
-## 🤝 How to Contribute
+## How to Contribute
 
 ### Types of Contributions
 
@@ -50,7 +50,7 @@ We welcome several types of contributions:
    git push origin feature/your-feature-name
    ```
 
-## 📝 Coding Standards
+## Coding Standards
 
 ### File Structure
 
@@ -100,7 +100,7 @@ fun main() {
 - Include import statements in comments for reference
 - Provide alternative implementations that work without Android SDK when possible
 
-## 🎯 Content Guidelines
+## Content Guidelines
 
 ### What to Include
 
@@ -116,7 +116,7 @@ fun main() {
 - **Poor Documentation**: Every contribution must be well-documented
 - **Breaking Changes**: Don't modify existing working examples without good reason
 
-## 🧪 Testing Your Contributions
+## Testing Your Contributions
 
 Before submitting:
 
@@ -125,7 +125,7 @@ Before submitting:
 3. **Documentation Review**: Check that KDoc renders properly
 4. **Code Style**: Follow the established patterns in the repository
 
-## 📋 Pull Request Process
+## Pull Request Process
 
 ### PR Title Format
 
@@ -149,7 +149,7 @@ Include:
 3. **Documentation Review**: Ensure documentation meets standards
 4. **Testing**: Verify examples work as intended
 
-## 🏷️ Issue Guidelines
+## Issue Guidelines
 
 ### Reporting Bugs
 
@@ -168,21 +168,21 @@ Use the feature request template and include:
 - **Examples**: Any specific examples or use cases?
 - **Implementation**: Any ideas on how to implement this?
 
-## 🌟 Recognition
+## Recognition
 
 Contributors will be recognized in:
 - **README.md**: Contributors section
 - **File Attribution**: @author tags in contributed files
 - **Release Notes**: Mention of significant contributions
 
-## 📞 Getting Help
+## Getting Help
 
 Need help contributing? Reach out through:
 - **GitHub Issues**: For technical questions
 - **Discussions**: For general questions about the project
 - **Pull Request Comments**: For specific feedback on contributions
 
-## 📋 Checklist for Contributors
+## Checklist for Contributors
 
 Before submitting your contribution:
 
@@ -196,7 +196,7 @@ Before submitting your contribution:
 - [ ] Commit messages follow conventional format
 - [ ] PR description clearly explains the contribution
 
-## 🙏 Thank You
+## Thank You
 
 Thank you for contributing to this project! Your efforts help make Android interview preparation better for developers worldwide.
 
