@@ -10,11 +10,17 @@ package advanceKotlin.advanceClasses
  * - Inheritance with constructors
  * 
  * ## Topics Covered:
- * - **Primary Constructor**: The main constructor defined in the class header
- * - **Init Block**: Code that runs when an instance is created
- * - **Secondary Constructor**: Additional constructors using the `constructor` keyword
- * - **Constructor Chaining**: Calling one constructor from another using `this()`
- * - **Inheritance**: How constructors work with class inheritance
+ * - **Primary Constructor**: The main constructor defined in the class header (Person, Car, Rectangle)
+ * - **Init Block**: Code that runs when an instance is created (all classes show this)
+ * - **Secondary Constructor**: Additional constructors using the `constructor` keyword (Car, Rectangle)
+ * - **Constructor Chaining**: Calling one constructor from another using `this()` (Car, Rectangle)
+ * - **Inheritance**: How constructors work with class inheritance (Employee extends Person)
+ * 
+ * ## Examples:
+ * - **Person**: Basic primary constructor with init block
+ * - **Employee**: Inheritance - passes parameters to parent constructor
+ * - **Car**: Primary + secondary constructor with property initialization
+ * - **Rectangle**: Constructor chaining to create squares from rectangles
  * 
  * @author Udit
  * @since 1.0
@@ -53,20 +59,20 @@ class Employee(
         "Employee(name=$name, age=$age, jobTitle=$jobTitle, department=$department)"
 }
 
-class Vehicle(val model: String, val price: Int) {
+class Car(val model: String, val price: Int) {
 
     var owner: String = "Unknown"
 
     init {
-        println("Init: Vehicle $model worth ₹$price created")
+        println("Init: Car $model worth ₹$price created")
     }
 
     /**
      * Secondary constructor that allows setting the owner.
      * 
-     * @param model The vehicle model
-     * @param price The vehicle price  
-     * @param owner The vehicle owner
+     * @param model The car model
+     * @param price The car price  
+     * @param owner The car owner
      */
     constructor(model: String, price: Int, owner: String) : this(model, price) {
         this.owner = owner
@@ -74,12 +80,12 @@ class Vehicle(val model: String, val price: Int) {
     }
 
     /**
-     * Returns a string representation of the Vehicle object.
+     * Returns a string representation of the Car object.
      * 
-     * @return A formatted string containing the vehicle's model, price, and owner
+     * @return A formatted string containing the car's model, price, and owner
      */
     override fun toString(): String = 
-        "Vehicle(model=$model, price=₹$price, owner=$owner)"
+        "Car(model=$model, price=₹$price, owner=$owner)"
 }
 
 class Rectangle(val width: Int, val height: Int) {
@@ -115,11 +121,11 @@ fun main() {
     val emp = Employee("Android Developer", "Engineering", "Alex", 26)
     println("Employee object: $emp")
 
-    println("\n---- Vehicle Constructors ----")
-    val v1 = Vehicle("Tesla Model 3", 40_00_000)
-    val v2 = Vehicle("Nissan GT-R", 95_00_000, "Udit")
-    println("Vehicle 1 object: $v1")
-    println("Vehicle 2 object: $v2")
+    println("\n---- Car Constructors ----")
+    val v1 = Car("Tesla Model 3", 40_00_000)
+    val v2 = Car("Nissan GT-R", 95_00_000, "Udit")
+    println("Car 1 object: $v1")
+    println("Car 2 object: $v2")
 
     println("\n---- Rectangle Constructors ----")
     val square = Rectangle(5)

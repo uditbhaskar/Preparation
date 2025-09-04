@@ -112,8 +112,6 @@ private const val MAGIC_NUMBER = 90
 private const val DEFAULT_AGE = 20
 private const val SENIOR_AGE_THRESHOLD = 18
 private const val FACTORY_DEFAULT_VALUE = 20
-
-// String constants
 private const val OBJECT_EXPRESSION_MESSAGE = "Inside Object expression with value"
 private const val FACTORY_VALUE_LABEL = "Factory value:"
 private const val SENIOR_STATUS = "SENIOR"
