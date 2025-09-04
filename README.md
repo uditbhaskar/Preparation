@@ -118,15 +118,6 @@ src/
 - Code is production-quality and follows industry standards
 - Android-specific code is commented but preserved for reference
 
-### Key Files to Focus On
-
-**Must-Know for Senior Roles**:
-- `advanceKotlin/advanceClasses/SealedClasses.kt` - Type-safe hierarchies
-- `solidPrincipal/` - All SOLID principle implementations
-- `coroutine/Coroutine.kt` - Advanced coroutine patterns
-- `flow/Flow.kt` - Reactive programming with Flow
-- `thread/MutexAndSynchronise.kt` - Thread safety concepts
-
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
